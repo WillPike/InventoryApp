@@ -1,0 +1,60 @@
+/* Stuff for the counters */
+
+
+		.button {
+			width: 40px;
+			height: 40px;
+			border: 1px solid black;
+			border-radius: 6px;
+			background-color: rgba(237, 49, 49, .8);
+			color: white;
+			font-size: 28px;
+			font-weight: bold;
+			text-align: center;
+			clear: all;
+			float: left;
+			padding-top: 0px;
+			margin: 5px;
+		}
+		.save {
+			background-color: rgba(132, 220, 198, 1);
+			width: 90px;
+			font-size: 24px;
+		}
+		.refresh {
+			background-color: rgba(165, 255, 214, 1);
+			width: 90px;
+			font-size: 16px;
+		}
+		input {
+			width: 100px;
+			height: 40px;
+			border-radius: 8px;
+			border: 1px solid black;
+			font-size: 30px;
+			font-weight: bold;
+			clear: all;
+			float: left;
+			text-align: center;
+			margin: 5px;
+
+		}
+
+		.inventory {
+			padding: 0 18%;	
+		}
+
+		label span {
+			text-align: center;
+		}
+
+		.categoryTab {
+			border: 1px solid black;
+			border-radius: 3px;
+			background-color: rgba(255, 104, 107, 1);
+			color: white;
+			text-align: center;
+		}
+		.jumbotron {
+			text-align: center;
+		}
