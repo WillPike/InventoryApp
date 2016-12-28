@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>server test</title>
+	<script type="text/javascript">
+		var connection = new ActiveXObject("ADODB.Connection") ;
+		// var objConnection=Server.CreateObject("ADODB.objConnection");
+
+		var connectionstring="Data Source=qblicensing-db.co4cbzsmf01f.us-west-2.rds.amazonaws.com,4120;Initial Catalog=Initial Catalog=590977_qblicensingdb;User ID=DTS;Password=dTouch99;Provider=SQLOLEDB";
+
+		connection.Open(connectionstring);
+		var rs = new ActiveXObject("ADODB.Recordset");
+
+		rs.Open("SELECT * FROM dbo.Products", connection);
+		rs.MoveFirst
+		while(!rs.eof)
+		{
+		   document.write(rs.fields(1));
+		   rs.movenext;
+		}
+
+		rs.close;
+		connection.close; 
+	</script>
+</head>
+<body>
+
+
+</body>
+</html>

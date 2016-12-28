@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="img/dtslogos.png">
 
-    <title>Off Canvas Template for Bootstrap</title>
+    <title>DTS Inventory</title>
 
     
 
@@ -102,7 +102,7 @@
               <script type="text/javascript">
                 function addOne() {
                   var numString = document.getElementById('counter24').value;
-                  numString += ("+" + 1);
+                  numString ++;
                   document.getElementById('counter24').value = eval(numString);
                 }
 
@@ -120,7 +120,7 @@
             <div>
               <div class="inventory">
                 <label><span>Number Of Screens Available</span></label><br>
-                <table>
+                <!-- <table>
                   <tr>
                     <td> 
                       <span class="button add" onclick="addOne()">+</span>
@@ -133,7 +133,49 @@
                     <td> <span colspan="2" class="button save" onclick="save()">Save</span>
                     <span class="button refresh" onclick="Refresh()">Refresh</span></td>
                   </tr>
-                </table>
+                </table> -->
+                <?php
+                  $servername = "localhost";
+                  $username = "DTS";
+                  $password = "dTouch99";
+                  $myDB = "InventoryApp";
+
+                  // Create connection
+                  $conn = mysqli_connect($servername, $username, $password, $myDB);
+
+                  // Check connection
+                  if (!$conn) {
+                      die("!!Connection failed: " . mysqli_connect_error());
+                  }
+                  // echo "Connected successfully";
+
+
+
+                  //$sql = "SELECT ID, quantity, name FROM Products";
+
+                  $sql24 = "SELECT * FROM Products WHERE ID='T24p'";
+
+                  $result = $conn->query($sql);
+
+                  while($row = mysqli_fetch_array($result)){
+                    echo "<textarea>" . $row['quantity'] . " " . $row['name'] . "</textarea>";
+                  }
+
+
+                  // if ($result->num_rows > 0) {
+                  //     // output data of each row
+                  //     while($row = $result->fetch_assoc()) {
+                  //         echo "ID#: " . $row["ID"]. " - Name: " . $row["name"]. " Quantity: " . $row["quantity"]. "<br>";
+                  //     }
+                  // } else {
+                  //     echo "0 results";
+                  // }
+
+
+
+
+                  // $conn->close();
+                ?>
               </div>
             </div>
             <h3 class="categoryTab">32" PCAP</h3>
